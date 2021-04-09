@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+ <div class="container">
+         <div class="container-fluid">
+    <a class="navbar-brand" href="/">Aplicacion Notas</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+      </ul>
+    
+      <ul class="navbar-nav ml-auto">
+          {{#if user}}
+              <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Notas Menu
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/notas">Lista de notas</a>
+              <a class="dropdown-item" href="/notas/crearnotas">Crear Notas</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="/usuarios/logout">Cerrar Session</a>
+            </div>
+          </li>
+          {{else}}
+          <li class="nav-item">
+            <a class="nav-link" href="/usuarios/login">Logear</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/usuarios/registro">Registrar</a>
+          {{/if}}
+            
+      </ul>
+    </div>
+  </div>
+
+ </div>
+</nav>

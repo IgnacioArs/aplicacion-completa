@@ -1,0 +1,29 @@
+<div class="row">
+        {{#each DatosObtenidos}}
+        <div class="col-md-3 mt-3">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title d-flex justify-content-between align-items-center">
+                        {{ titulo }}  <a href="/notas/editarnotas/{{id}}"><i class="fas fa-edit"></i></a>
+                     </h4>
+                    <p>{{ descripcion }}</p>
+                    <p>{{ fecha }}</p>
+                  <form action="/notas/eliminar-nota/{{id}}?_method=DELETE" method="POST">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button type="submit" class="btn btn-danger btn-lg btn-block">Borrar Nota</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        {{else}}
+        <div class="card mx-auto">
+                <div class="card-body">
+                       {{!--  viene de la variable user desde el index donde estan los mensajes  --}}
+                    <h1>Helllo {{user.name}}</h1>
+                    <p class="lead text-center">No existen notas</p>
+                    <a href="/notas/crearnotas" class="btn btn-success btn-block">Empieza a crear tus nuevas notas</a>
+                </div>
+        </div>
+         {{/each}}
+</div> 
